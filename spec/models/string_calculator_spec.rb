@@ -13,6 +13,10 @@ RSpec.describe StringCalculator do
       expect(calculator.add("1")).to eq(1)
     end
 
+    it 'returns the sum of two numbers' do
+      expect(calculator.add("1,5")).to eq(6)
+    end
+
     it 'throws an exception for negative numbers' do
       expect { calculator.add("1,-2,3,-4") }.to raise_error(RuntimeError, "negative numbers not allowed: -2,-4")
     end
